@@ -1,6 +1,5 @@
-# ☕ Caffeine - Coffee Shop Website  
+# ☕ Caffeine - Coffee Shop Website 
 
-![Website Preview](image.png)  
 
 A modern, responsive coffee shop website built with **HTML, CSS, and JavaScript**.  
 
