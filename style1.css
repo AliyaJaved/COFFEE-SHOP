@@ -1,0 +1,83 @@
+*{
+	font-family:'Algerian',sans-serif;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+.container{
+	height:100%;
+	width:100%;
+	background-repeat:no repeat;
+	background-size:cover;
+	font-family:Arial,sans-serif;
+	font-size:35px;
+}
+.navbar{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:30px 80px;
+}
+.navbar.title{
+	color:#fff;
+	font-size:67px;
+	font-weight:600;
+	cursor:pointer;
+}
+span{
+	color:crimson;
+}
+.navbar p{
+	position:absolute;
+	margin-top:100px;
+	margin-left:15px;
+	color:#fff;
+	font-size:20px;
+	font-weight:500;
+}
+.menu li{
+	list-style:none;
+	display:inline-block;
+}
+.menu li a{
+	text-decoration:none;
+	color:#fff;
+	font-size:27px;
+	font-weight:600;
+	margin-left:25px;
+	transition:.4s ease;
+}
+.menu li a:hover{
+	color:crimson;
+	padding:5px 30px;
+	border:2px solid #fff;
+}
+.home{
+	height:400px;
+	padding:70px;
+}
+.title-1{
+	font-size:56px;
+	color:black;
+	font-weight:600;
+}
+.home p{
+	color:black;
+	font-size:25px;
+	padding-top:10px;
+}
+.home button{
+	height:40px;
+	color:#fff;
+	background:crimson;
+	font-size:22px;
+	padding:5px 20px;
+	margin-top:20px;
+	border:none;
+	transition:.4s ease;
+	cursor:pointer;
+}
+.home button:hover{
+	background:none;
+	border:2px solid crimpson;
+}

@@ -1,0 +1,268 @@
+<html>
+<head>
+<link rel="stylesheet" href="style1.css">
+    <script src="C:\Users\hp\OneDrive\Desktop\ALIYA\SEM-2\WDT2\JQUERYLIB\jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".det1").click(function(){
+                if($(".details1").is (":hidden")){
+                    $(".details1").slideDown(500);
+                }
+                else{
+                    $(".details1").slideUp(500);
+                }
+            });
+			$(".det2").click(function(){
+                if($(".details2").is (":hidden")){
+                    $(".details2").slideDown(500);
+                }
+                else{
+                    $(".details2").slideUp(500);
+                }
+            });
+			$(".det3").click(function(){
+                if($(".details3").is (":hidden")){
+                    $(".details3").slideDown(500);
+                }
+                else{
+                    $(".details3").slideUp(500);
+                }
+            });
+			$(".det4").click(function(){
+                if($(".details4").is (":hidden")){
+                    $(".details4").slideDown(500);
+                }
+ else{
+                    $(".details4").slideUp(500);
+                }
+            });
+        });
+    </script>
+    <title>MENU</title>
+    <style>
+        *{
+	font-family:'Algerian',sans-serif;
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+.container{
+	height:100%;
+	width:100%;
+	background-repeat:no repeat;
+	background-size:cover;
+	font-family:Arial,sans-serif;
+	font-size:35px;
+}
+.navbar{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:30px 80px;
+}
+.navbar.title{
+	color:#fff;
+	font-size:67px;
+	font-weight:600;
+	cursor:pointer;
+}
+span{
+	color:crimson;
+}
+.navbar p{
+	position:absolute;
+	margin-top:100px;
+	margin-left:15px;
+	color:#fff;
+	font-size:20px;
+	font-weight:500;
+}
+.menu li{
+	list-style:none;
+	display:inline-block;
+}
+.menu li a{
+	text-decoration:none;
+	color:#fff;
+	font-size:27px;
+	font-weight:600;
+	margin-left:25px;
+	transition:.4s ease;
+}
+.menu li a:hover{
+	color:crimson;
+	padding:5px 30px;
+	border:2px solid #fff;
+}
+.home{
+	height:400px;
+	padding:70px;
+}
+.title-1{
+	font-size:56px;
+	color:black;
+	font-weight:600;
+}
+.home p{
+	color:black;
+	font-size:25px;
+	padding-top:10px;
+}
+.home button{
+	height:40px;
+	color:#fff;
+	background:crimson;
+	font-size:22px;
+	padding:5px 20px;
+	margin-top:20px;
+	border:none;
+	transition:.4s ease;
+	cursor:pointer;
+}
+.home button:hover{
+	background:none;
+	border:2px solid crimpson;
+}
+        body {
+            background-color: #000000;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+		    width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .products-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .products-container1 {
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: -200px 0 50px 155px;
+        }
+
+        .product {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background-color: #fff;
+            border-radius: 25px;
+            box-sizing: border-box;
+        }
+        .img-area img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+
+        .info-area {
+            height: 180px;
+            padding: 10px 20px;
+            text-align: center;
+            background: #312218;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+        }
+
+        .info-area h3 {
+            font-size: 20px;
+            margin: 0;
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+		
+		 .product-price {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 7px 35px;
+            margin: 10px 0 0 0;
+            border-radius: 10px;
+            background-color: crimson;
+            border: none;
+        }
+        .details1 , .details2 , .details3 , .details4{
+            font-size: 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <ul class="menu">
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="menu1.html">MENU</a></li>
+                <li><a href="storehrs.html">STORE HOURS</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+            </ul>
+        </div>
+        <div class="products-container">
+            <div class="product">
+                <div class="img-area">
+                    <img alt="" src="americano.jpg">
+                </div>
+                <div class="info-area">
+                    <h3>ICED AMERICANO</h3>
+                    <div class="product-price">$19.99</div>
+                    <button class="det1">More Details</button>
+                 <div class="details1" style="font-family: poppins; color:white">Traditional Iced Americano is made by pouring cold water, over ice followed by shots of espresso.</div><br><br>
+				</div>
+            </div>
+            <div class="product">
+                <div class="img-area">
+                    <img alt="" src="mocha.jpg">
+                </div>
+                <div class="info-area">
+                    <h3>MOCHA LATTE</h3>
+                    <div class="product-price">$24.99</div>
+                    <button class="det2">More Details</button> 
+                    <div class="details2" style="font-family: poppins; color:white">It is a variant of a latte, in the sense that it is often 1/3 espresso and 2/3 steamed milk.</div>
+                </div>
+            </div>
+        </div>		
+	</div>
+    <div class="products-container1">
+        <div class="product">
+            <div class="img-area">
+                <img alt="" src="espresso.jpg">
+            </div>
+            <div class="info-area">
+                <h3>ESPRESSO</h3>
+                <div class="product-price">$19.99</div>
+                <button class="det3">More Details</button>
+                <div class="details3" style="font-family: poppins; color:white"> espresso is a concentrated form of coffee brewed with high pressure, hot water and finely ground coffee beans. </div><br><br>
+			</div>
+        </div>
+        <div class="product">
+            <div class="img-area">
+                <img alt="" src="emacchiato.jpg">
+            </div>
+            <div class="info-area">
+                <h3>ESPRESSO MACCHIATO</h3>
+                <div class="product-price">$24.99</div>
+                <button class="det4">More Details</button>				
+                <div class="details4" style="font-family: poppins; color:white">An espresso macchiato, also known as caffè macchiato or simply macchiato, is a coffee drink made with espresso and steamed milk. </div>
+			</div>
+        </div>
+    </div>		
+	
+</body>
+
+</html>

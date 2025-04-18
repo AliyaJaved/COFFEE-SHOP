@@ -1,0 +1,164 @@
+<html>
+<head>
+<style>
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family:sans-serif;
+}
+body{
+	background-image:url("1.jpg");
+	width:100%;
+	height:100%;
+	background-size:cover;
+}
+.form{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width:480px;
+	background:#fff;
+	border-radius:5px;
+	text-align:center;
+	padding:30px 30px 5px 30px;
+	box-shadow:0px 5px 20px 10px;
+}
+.form h2{
+	font-size:30px;
+	font-weight:600;
+}
+.form form{
+	margin:40px 0;
+}
+form.field{
+	width:100%;
+	margin-bottom:20px;
+}
+form.field.input-area{
+	position:relative;
+}
+form input{
+	height:50px;
+	width:100%;
+	outline:none;
+	padding:0 15px;
+	padding-left:40px;
+	font-size:18px;
+	border-radius:5px;
+	border:1px solid #34495e;
+	border-bottom-width:2px;
+	margin-top:30px;
+}
+form input::placeholder{
+	color:#bfbfbf;
+	font-size:17px;
+}
+form input[type="submit"]{
+	margin-top:30px;
+	border:none;
+	background:#34495e;
+	color:#fff;
+	font-size:18px;
+	cursor:pointer;
+	transition:background 0.2s ease;
+}
+form input[type="submit"]:hover{
+	background:#333867;
+}
+
+		</style>
+<script>
+    function printError(elemId,hintMsg)
+        {
+            if( hintMsg != ""){
+                document.getElementById(elemId).innerHTML=hintMsg;
+                document.getElementById(elemId).style.color="red";
+            }
+        }
+        function validateForm()
+        {
+            let name=document.form.names.value;
+            let building=document.form.build.value;
+            let landmark=document.form.land.value;
+            // alert(street);
+    
+            let nameErr = bldErr = landErr =  false;
+            if(name == "") {
+                printError("nameErr", "Please enter your name");
+                nameErr=true;
+            } else {
+                let regex=/^[a-zA-Z\s]+$/;
+                if(regex.test(name)===false) {
+                    printError("nameErr","Please enter valid name...!");
+                    nameErr=false;
+                }
+                else {
+                    printError("nameErr","");   
+                }
+            }
+
+
+            if(building == "") {
+                printError("bldErr", "Please enter your building name");
+                bldErr=false;
+            }
+            else {
+                printError("bldErr","");
+            }
+
+
+            if(landmark == "") {
+                printError("landErr", "Please enter your landmark so that we can reach to you faster..! ");
+                landErr = false;
+            }
+            else {
+                printError("landErr","");
+            }
+
+
+
+            if( nameErr || bldErr || landErr  ) {
+                return false;
+            }
+			else{
+				return true;
+			}	
+        }
+    
+    </script>
+</head>
+<body>
+    <div class="form">
+    <form name="form"   method="post" onsubmit="return validateForm()" action="C:\Users\hp\OneDrive\Desktop\PROJECT\payment.html">
+    <h2>Order Form</h2>
+            <div class="field name">
+    <div class="input-area">
+        <input type="text" name="names" placeholder="Name" id="name">
+    <div id="nameErr"> </div>
+    </div>
+    </div>
+    <div class="field street">
+    <div class="input-area">
+        <input type="text" name="str" placeholder="Street No" id="street">
+    </div>
+    </div>
+    <div class="field building">
+    <div class="input-area">
+        <input type="text" name="build" placeholder="Building" id="bld">
+    <div id="bldErr"> </div>
+    </div>
+    </div>
+    <div class="field landmark">
+    <div class="input-area">
+    <input type="text" name="land" placeholder="Landmark" id="landmark">
+    <div id="landErr"> </div>
+    </div>
+	</div>
+	
+    <input type="submit" value="Place My Order">
+	</form>
+	</div>
+</body>
+</html>

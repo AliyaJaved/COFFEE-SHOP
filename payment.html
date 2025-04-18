@@ -1,0 +1,108 @@
+<html>
+<head>
+	<script src="C:\Users\hp\OneDrive\Desktop\ALIYA\WDT2\JQUERYLIB\jquery.min.js"></script>
+
+	<link rel="stylesheet" href="cstyle.css">
+	<script>
+	function printError(elemId,hintMsg)
+        {
+            if( hintMsg != ""){
+                document.getElementById(elemId).innerHTML=hintMsg;
+                document.getElementById(elemId).style.color="red";
+            }
+        }
+	function validateForm()
+        {
+            let number=document.form.c_number.value;
+            let date=document.form.c_date.value;
+            let cvv=document.form.cvv.value;
+			let email=document.form.email.value;
+			let numberErr = dateErr = cvvErr = emailErr =  false;
+			if(number == "") {
+                printError("numberErr", "Please enter your card number");
+                numErr=true;
+            }
+			else if(number.length<12){
+				printError("numberErr","Card number should be of twelve digits..!");
+			}                else {
+                    printError("numberErr","");   
+                }
+			if(date == "") {
+                printError("dateErr", "Please enter expiry date of your card..!");
+                dateErr=true;
+            }
+			else {
+                    printError("dateErr","");   
+                }
+			if(cvv == "") {
+                printError("cvvErr", "Please enter your cvv");
+                cvvErr=true;
+            }
+			else if(cvv.length<3){
+				printError("cvvErr","Cvv number should be of three digits..!");
+			}               
+			else {
+                    printError("cvvErr","");   
+            }
+			if(email == "") {
+			printError("emailErr", "Please enter your email address");
+		} else {
+			let regex=/^\S+@\S+\.\S+$/;
+			if(regex.test(email)===false) {
+				printError("emailErr","Please enter valid email address...!");
+				emailErr=true;
+			}
+			else {
+				printError("emailErr","");
+			}
+		}
+		if(numberErr || dateErr || cvvErr || emailErr) {
+			return false;
+		}		   
+            }
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="center">
+			<a href="https://www.shift4shop.com/credit-card-logos.html"><img alt="Credit Card Logos" title="Credit Card Logos" src="https://www.shift4shop.com/images/credit-card-logos/cc-lg-4.png" width="250" height="auto"/></a>
+			<hr style="border:1px solid #ccc; margin: 0 15px;">
+
+			<div class="card-details">
+				<form name="form" onsubmit="return validateForm()" action="payment1.html" method="post">
+					<p>Card number</p>
+					<div class="c-number" id="c_number">
+						<input id="c_number" name="number" class="cc-number" placeholder="Card number">
+						<div id="numberErr"> </div>
+					</div>
+
+					<div class="c_details">
+						<div>
+							<p>Expiry date</p>
+							<input id="c_date" name="date" class="cc-exp" placeholder="MM/YY">
+							<div id="dateErr"> </div>
+						</div>
+						<div>
+							<p>CVV</p>
+							<div class="cvv-box" id="cvv-box">
+								<input id="cvv" name="cvv" class="cc-cvv" placeholder="CVV">
+								<div id="cvvErr"> </div>
+								
+							</div>
+						</div>
+					</div>
+					<div class="email">
+						<p>Email</p>
+						<input type="email" name="c_email" placeholder="example@email.com" id="email">
+						<div id="emailErr"> </div>
+					</div>
+					<input type="submit" value="PAY NOW">
+				</form>
+			</div>
+		</div>
+
+
+		
+	</div>
+</body>
+</html>

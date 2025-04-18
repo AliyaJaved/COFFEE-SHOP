@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<title>SIGN UP</title>
+		<link rel="stylesheet" href="style.css">
+		<script>
+			function printError(elemId,hintMsg)
+			{
+					document.getElementById(elemId).innerHTML=hintMsg;
+					document.getElementById(elemId).style.color="red";
+			}
+			function validateForm()
+			{
+				let name=document.form.name.value;
+				let email=document.form.email.value;
+				let password=document.form.pwd.value;
+				let confirm=document.form.cpwd.value;
+				
+				let nameErr=emailErr=pwdErr=cpwdErr=true;
+				
+				if(name == "") {
+			printError("nameErr", "Please enter your name");
+		} else {
+			let regex=/^[a-zA-Z\s]+$/;
+			if(regex.test(name)===false) {
+				printError("nameErr","Please enter valid name...!");
+			}
+			else {
+				printError("nameErr","");
+				nameErr=false;
+			}
+		}
+		if(email == "") {
+			printError("emailErr", "Please enter your email address");
+		} else {
+			let regex=/^\S+@\S+\.\S+$/;
+			if(regex.test(email)===false) {
+				printError("emailErr","Please enter valid email address...!");
+			}
+			else {
+				printError("emailErr","");
+				emailErr=false;
+			}
+		}
+		if(password == "") {
+			printError("pwdErr", "Please enter your password");
+		} else {
+			let regex=/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+			if(regex.test(password)===false) {
+				printError("pwdErr","Password must contain Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and a special character");
+			}
+			else {
+				printError("pwdErr", "");
+				pwdErr=false;
+			}
+		}
+		if(confirm == "") {
+			printError("cpwdErr","Please confirm your password");
+		} else if(password != confirm) {
+			printError("cpwdErr", "Your password doesn't match...!");
+		}
+		else {
+				printError("cpwdErr", "");
+				cpwdErr=false;
+			}
+		
+		if(nameErr || emailErr || pwdErr || cpwdErr == true) {
+			return false;
+		}
+	}
+		</script>
+	</head>
+	<body>
+	<div class="form">
+	<form name="form" onsubmit="return validateForm()" action="home.html" method="post">
+		<h2>SIGN UP TO BUY</h2>
+		<div class="field name">
+		<div class="input-area">
+			<input type="text" name="name" placeholder="Name" id="name">
+		<div id="nameErr"> </div>
+		</div>
+		</div>
+		<div class="field email">
+		<div class="input-area">
+			<input type="text" name="email" placeholder="Email" id="email">
+		<div id="emailErr"> </div>
+		</div>
+		</div>
+		<div class="field password">
+		<div class="input-area">
+			<input type="text" name="password" placeholder="Password" id="pwd">
+		<div id="pwdErr"> </div>
+		</div>
+		</div>
+		<div class="field cpwd">
+		<div class="input-area">
+			<input type="text" placeholder="Confirm Password" id="cpwd">
+		<div id="cpwdErr"> </div>
+		</div>
+		</div>
+		<input type="submit" value="Sign Up"><br><br>
+		<p>Already have an account?</p><br><a href="login.html"><i><b>Login</b></i></a>
+	</body>
+</html>
+	
